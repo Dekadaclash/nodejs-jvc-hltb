@@ -2,7 +2,8 @@
 
 A robust **HowLongToBeat API client** for Node.js that automatically extracts dynamic API keys using multiple methods (Puppeteer interception, token extraction) to ensure reliable access to HLTB data.
 
-[![npm version](https://badge.fury.io/js/jvc-hltb.svg)](https://badge.fury.io/js/jvc-hltb)
+[![npm version](https://img.shields.io/npm/v/jvc-hltb.svg)](https://www.npmjs.com/package/jvc-hltb)
+[![npm downloads](https://img.shields.io/npm/dm/jvc-hltb.svg)](https://www.npmjs.com/package/jvc-hltb)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 > **Author:** [JavocSoft](https://javocsoft.com)
