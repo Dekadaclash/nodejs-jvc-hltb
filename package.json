@@ -1,0 +1,56 @@
+{
+  "name": "jvc-hltb",
+  "version": "1.0.0",
+  "description": "A robust HowLongToBeat API client for Node.js that automatically extracts dynamic API keys using multiple methods to ensure reliable access to HLTB data",
+  "main": "src/index.js",
+  "types": "src/index.d.ts",
+  "files": [
+    "src/index.js",
+    "src/index.d.ts",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "test": "node test/test.js",
+    "example": "node examples/basic-usage.js"
+  },
+  "keywords": [
+    "howlongtobeat",
+    "hltb",
+    "game",
+    "games",
+    "gaming",
+    "videogames",
+    "duration",
+    "completion",
+    "time",
+    "playtime",
+    "api",
+    "client",
+    "nodejs",
+    "puppeteer",
+    "scraper"
+  ],
+  "author": {
+    "name": "JavocSoft",
+    "url": "https://javocsoft.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/javocsoft/jvc-hltb.git"
+  },
+  "bugs": {
+    "url": "https://github.com/javocsoft/jvc-hltb/issues"
+  },
+  "homepage": "https://github.com/javocsoft/jvc-hltb#readme",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "dependencies": {
+    "axios": "^1.6.2",
+    "puppeteer": "^21.11.0"
+  },
+  "devDependencies": {}
+}
